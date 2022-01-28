@@ -8,3 +8,62 @@
 // Give the Programmer 'learnLanguage' and 'listLanguages' methods that add new languages to the programmer and list off all languages the programmer knows.
 // Test it out - can you create different programmers and run all the methods on them? Does each programmer maintain their own properties properly and independently of the other programmers?
 
+class Person{
+    constructor(name, job, age){
+        this.name = name;
+        this.job = job;
+        this.age = age;
+    }
+
+    exercise(){
+        console.log(`${this.name} is about to run a marathon.. in his dreams`)
+    }
+
+    fetchJob(){
+        console.log(`${this.name} is a ${this.job} at Wells Fargo`)
+    }
+
+}
+
+class Programmer{
+    constructor(name, job, age, languages, languagesIWantToLearn) {
+        this.name = name;
+        this.job = job;
+        this.age = age;
+        this.languages = languages;
+        this.languagesIWantToLearn = languagesIWantToLearn;
+        this.busy = true;
+    }
+
+    completeTask(){
+        this.busy = false;
+    }
+
+    offerNewTask(){
+        if (this.busy === true){
+            console.log(`${this.name} cant accept any new tasks right now.`)
+        } else if (this.busy == false){
+            console.log(`${this.name} would love to take on a new responsibility.`)
+        }
+    }
+
+    listLanuages(){
+        console.log(`Programming languages I know: ${this.languages}`)
+    }
+
+    learnLanguages(){
+        console.log(`Programming languages I want to learn: ${this.languagesIWantToLearn}`)
+    }
+}
+
+const brianK = new Person ('Brian K', 'Full Stack Developer', 19);
+console.log(brianK);
+brianK.exercise();
+brianK.fetchJob();
+
+const kBrian = new Programmer('Brian K', 'Full Stack Developer', 19, "JavaScript, HTML/CSS", "Node.js, React")
+console.log(kBrian);
+kBrian.completeTask();
+kBrian.offerNewTask();
+kBrian.listLanuages();
+kBrian.learnLanguages();
